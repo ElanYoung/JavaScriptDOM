@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+<a class="popup" href="http://www.example.com" onclick="popUp(this.href);return false;">Example</a>
+<script>
+    function prepareLinks() {
+        if (!document.getElementsByTagName) return false;
+        var links = document.getElementsByTagName("a");
+        for (let i = 0; i < links.length; i++) {
+            if (links[i].getAttribute("class") == "popup") {
+                links[i].onclick = function () {
+                    popUp(this.getAttribute("href"));
+                    return false;
+                };
+            }
+        }
+    }
+
+    function popUp(winUrl) {
+        window.open(winUrl, "popup", "width=320,height=480");
+    }
+
+    window.onload = prepareLinks
+</script>
+</body>
+</html>

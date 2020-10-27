@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list</title>
+    <style type="text/css">
+        p {
+            color: yellow;
+            font-family: "arial", sans-serif;
+            font-size: 1.2em;
+        }
+
+        body {
+            color: white;
+            background-color: black;
+        }
+
+        #purchases {
+            border: 1px solid white;
+            background-color: #333;
+            color: #ccc;
+            padding: 1em;
+        }
+
+        #purchases li {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>What to Buy</h1>
+<p title="a gentle reminder">Don't forget to buy this stuff.</p>
+<p>This is just a test</p>
+<ul id="purchases">
+    <li>A tin of beans</li>
+    <li class="sale">Cheese</li>
+    <li class="sale">Milk</li>
+</ul>
+<script>
+    // var shopping = document.getElementById("purchases");
+    // var items = shopping.getElementsByTagName("*");
+    // alert(items.length)
+    // for (let index = 0; index < items.length; index++) {
+    //     alert(typeof items[index])
+    // }
+
+    // var shopping = document.getElementById("purchases");
+    // var sales = getElementsByClassName(shopping, "sale");
+    // alert(sales.length)
+
+    // function getElementsByClassName(node, classname) {
+    //     if (node.getElementsByClassName) {
+    //         return node.getElementsByClassName(classname)
+    //     } else {
+    //         var results = new Array;
+    //         var elems = node.getElementsByTagName("*");
+    //         for (let index = 0; index < elems.length; index++) {
+    //             if (elems[index].className.indexOf(classname) != -1) {
+    //                 results[index] = elems[index]
+    //             }
+    //         }
+    //         return results;
+    //     }
+    // }
+
+    // var paras = document.getElementsByTagName("p");
+    // for (let index = 0; index < paras.length; index++) {
+    //     var element = paras[index];
+    //     var title_text = element.getAttribute("title");
+    //     if (title_text) {
+    //         alert(title_text)
+    //     }
+    // }
+
+    // var shopping = document.getElementById("purchases");
+    // alert(shopping.getAttribute("title"))
+    // shopping.setAttribute("title", "a list of goods");
+    // alert(shopping.getAttribute("title"))
+
+    var paras = document.getElementsByTagName("p");
+    for (let index = 0; index < paras.length; index++) {
+        var element = paras[index];
+        var title_text = element.getAttribute("title");
+        if (title_text) {
+            paras[index].setAttribute("title", "brand new title text")
+            alert(paras[index].getAttribute("title"))
+        }
+    }
+</script>
+</body>
+
+</html>
